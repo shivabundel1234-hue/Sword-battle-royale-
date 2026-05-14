@@ -1,0 +1,25 @@
+# Android
+android/.gradle/
+android/build/
+android/.idea/
+android/*.iml
+android/local.properties
+android/.DS_Store
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log
+
+# Build
+dist/
+build/
+
+# Environment
+.env
+.env.local

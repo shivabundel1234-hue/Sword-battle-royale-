@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Of Sword Battle Royale</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #gameContainer {
+            position: relative;
+            width: 900px;
+            height: 600px;
+            max-width: 95vw;
+            max-height: 95vh;
+            aspect-ratio: 900 / 600;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #0f3460, #1a1a2e);
+            touch-action: none;
+            cursor: crosshair;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            border: 2px solid #00ffff;
+        }
+
+        #ui {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            display: flex;
+            justify-content: space-between;
+            color: #00ffff;
+            font-size: 16px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            z-index: 10;
+        }
+
+        .ui-stat {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px 16px;
+            border-radius: 5px;
+            border: 1px solid #00ffff;
+        }
+
+        .wave-info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #00ff00;
+            padding: 20px 40px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+            z-index: 100;
+            font-size: 24px;
+            border: 2px solid #00ff00;
+        }
+
+        .wave-info.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        <div id="ui">
+            <div class="ui-stat">❤️ <span id="playerHp">100</span>/100</div>
+            <div class="ui-stat">🏃 Wave <span id="wave">1</span></div>
+            <div class="ui-stat">📊 Score: <span id="score">0</span></div>
+        </div>
+        <div id="waveInfo" class="wave-info"></div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
